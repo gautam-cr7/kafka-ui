@@ -121,8 +121,8 @@ importers:
         specifier: 1.1.5
         version: 1.1.5(@types/react@18.2.79)(react@18.2.0)
       react-is:
-        specifier: 18.2.0
-        version: 18.2.0
+        specifier: 19.2.5
+        version: 19.2.5
       react-joyride:
         specifier: ^3.0.2
         version: 3.0.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -3741,11 +3741,11 @@ packages:
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  react-is@18.2.0:
-    resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
-
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+
+  react-is@19.2.5:
+    resolution: {integrity: sha512-Dn0t8IQhCmeIT3wu+Apm1/YVsJXsGWi6k4sPdnBIdqMVtHtv0IGi6dcpNpNkNac0zB2uUAqNX3MHzN8c+z2rwQ==}
 
   react-joyride@3.0.2:
     resolution: {integrity: sha512-Tm+zXo/O8rFOUkN1yH+t38HqLvOCB8p5JTqgQD3IlLyZGCXzJEnCXtyB/BQIUC7X07kEaw0BqtKjWFzF4fyDVw==}
@@ -8462,7 +8462,7 @@ snapshots:
     dependencies:
       '@jest/schemas': 29.6.3
       ansi-styles: 5.2.0
-      react-is: 18.2.0
+      react-is: 18.3.1
 
   pretty-format@30.3.0:
     dependencies:
@@ -8569,9 +8569,9 @@ snapshots:
 
   react-is@17.0.2: {}
 
-  react-is@18.2.0: {}
-
   react-is@18.3.1: {}
+
+  react-is@19.2.5: {}
 
   react-joyride@3.0.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
