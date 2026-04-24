@@ -1,5 +1,25 @@
 auth:
-  type: DISABLED
+  type: ${AUTH_TYPE:DISABLED}
+  oauth2:
+    client:
+      google:
+        provider: google
+        clientId: ${GOOGLE_CLIENT_ID:}
+        clientSecret: ${GOOGLE_CLIENT_SECRET:}
+        clientName: Google
+        redirectUri: ${GOOGLE_REDIRECT_URI:http://localhost:8080/login/oauth2/code/google}
+        authorizationGrantType: authorization_code
+        scope:
+          - openid
+          - profile
+          - email
+        authorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+        tokenUri: https://oauth2.googleapis.com/token
+        userInfoUri: https://openidconnect.googleapis.com/v1/userinfo
+        jwkSetUri: https://www.googleapis.com/oauth2/v3/certs
+        userNameAttribute: email
+        customParams:
+          type: google
 
 management:
   endpoint:

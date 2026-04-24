@@ -74,12 +74,8 @@ const DangerZone: React.FC<DangerZoneProps> = ({
   };
 
   const validateReplicationFactor = (data: { replicationFactor: number }) => {
-    try {
-      setReplicationFactor(data.replicationFactor);
-      confirmReplicationFactorChange();
-    } catch (e) {
-      // do nothing
-    }
+    setReplicationFactor(data.replicationFactor);
+    confirmReplicationFactorChange();
   };
 
   return (
@@ -105,7 +101,7 @@ const DangerZone: React.FC<DangerZoneProps> = ({
                 id="partitions"
                 name="partitions"
                 hookFormOptions={{
-                  required: 'Partiotions are required',
+                  required: 'Partitions are required',
                 }}
                 placeholder="Number of partitions"
               />
@@ -116,8 +112,9 @@ const DangerZone: React.FC<DangerZoneProps> = ({
                 buttonSize="M"
                 type="submit"
                 disabled={!partitionsMethods.formState.isDirty}
+                inProgress={increaseTopicPartitionsCount.isPending}
               >
-                Submit
+                Update Partitions
               </Button>
             </div>
           </S.Form>
@@ -156,8 +153,9 @@ const DangerZone: React.FC<DangerZoneProps> = ({
                 buttonSize="M"
                 type="submit"
                 disabled={!replicationFactorMethods.formState.isDirty}
+                inProgress={updateTopicReplicationFactor.isPending}
               >
-                Submit
+                Update Replication Factor
               </Button>
             </div>
           </S.Form>

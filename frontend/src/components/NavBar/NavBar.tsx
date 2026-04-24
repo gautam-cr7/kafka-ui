@@ -56,7 +56,7 @@ const NavBar: React.FC<Props> = ({ onBurgerClick }) => {
   const { themeMode, setThemeMode } = useContext(ThemeModeContext);
 
   return (
-    <S.Navbar role="navigation" aria-label="Page Header">
+    <S.Navbar role="navigation" aria-label="Page Header" data-tour="navbar">
       <S.NavbarBrand>
         <S.NavbarBrand>
           <Button buttonType="text" buttonSize="S" onClick={onBurgerClick}>

@@ -101,7 +101,7 @@ const Dashboard: React.FC = () => {
   return (
     <>
       <PageHeading text="Dashboard" />
-      <Metrics.Wrapper>
+      <Metrics.Wrapper data-tour="dashboard-metrics">
         <Metrics.Section>
           <Metrics.Indicator label={<Tag color="green">Online</Tag>}>
             <span>{config.online || 0}</span>{' '}
@@ -133,15 +133,17 @@ const Dashboard: React.FC = () => {
           </ActionCanButton>
         )}
       </S.Toolbar>
-      <Table
-        onRowClick={onRowClick}
-        columns={columns}
-        data={config?.list}
-        enableSorting
-        enableColumnResizing
-        columnSizingPersister={columnSizingPersister}
-        emptyMessage={clusters.isFetched ? 'No clusters found' : 'Loading...'}
-      />
+      <div data-tour="dashboard-table">
+        <Table
+          onRowClick={onRowClick}
+          columns={columns}
+          data={config?.list}
+          enableSorting
+          enableColumnResizing
+          columnSizingPersister={columnSizingPersister}
+          emptyMessage={clusters.isFetched ? 'No clusters found' : 'Loading...'}
+        />
+      </div>
     </>
   );
 };

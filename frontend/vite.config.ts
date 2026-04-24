@@ -88,12 +88,18 @@ export default defineConfig(({ mode }) => {
     ...defaultConfig.server,
     open: true,
     proxy: {
+      '/oauth2': {
+        target: isProxy,
+        changeOrigin: true,
+        secure: false,
+      },
       '/login': {
         target: isProxy,
         changeOrigin: true,
         secure: false,
         bypass: (req: IncomingMessage) => {
-          if (req.method === 'GET') {
+          // Only bypass the login page itself — let OAuth2 callbacks through to backend
+          if (req.method === 'GET' && req.url === '/login') {
             return req.url;
           }
         },

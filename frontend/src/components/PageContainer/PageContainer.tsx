@@ -53,7 +53,7 @@ const PageContainer: FC<PropsWithChildren> = ({ children }) => {
     <>
       <NavBar onBurgerClick={toggle} />
       <S.Container $isSidebarVisible={isSidebarVisible}>
-        <S.Sidebar aria-label="Sidebar" $visible={isSidebarVisible}>
+        <S.Sidebar aria-label="Sidebar" $visible={isSidebarVisible} data-tour="sidebar">
           <Nav />
         </S.Sidebar>
         <S.Overlay

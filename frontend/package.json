@@ -29,6 +29,7 @@
     "react-hot-toast": "2.4.1",
     "react-innertext": "1.1.5",
     "react-is": "18.2.0",
+    "react-joyride": "^3.0.2",
     "react-multi-select-component": "4.3.4",
     "react-router-dom": "6.30.3",
     "sass": "1.98.0",

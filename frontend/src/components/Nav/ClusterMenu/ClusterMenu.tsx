@@ -63,7 +63,12 @@ const ClusterMenu: FC<ClusterMenuProps> = ({
   };
 
   return (
-    <S.ClusterList role="menu" $colorKey={colorKey} ref={ref}>
+    <S.ClusterList
+      role="menu"
+      $colorKey={colorKey}
+      ref={ref}
+      data-tour="cluster-menu"
+    >
       <MenuTab
         title={name}
         status={status}

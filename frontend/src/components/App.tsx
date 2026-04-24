@@ -24,6 +24,7 @@ import { ThemeModeContext } from 'components/contexts/ThemeModeContext';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import ConfirmationModal from './common/ConfirmationModal/ConfirmationModal';
+import AppTour from './AppTour/AppTour';
 import { ConfirmContextProvider } from './contexts/ConfirmContext';
 import { GlobalSettingsProvider } from './contexts/GlobalSettingsContext';
 import { UserInfoRolesAccessProvider } from './contexts/UserInfoRolesAccessContext';
@@ -71,7 +72,9 @@ const App: React.FC = () => {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={isDarkMode ? darkTheme : theme}>
         {isAuthRoute ? (
-          <AuthPage />
+          <Suspense fallback={<PageLoader fullSize />}>
+            <AuthPage />
+          </Suspense>
         ) : (
           <GlobalSettingsProvider>
             <Suspense fallback={<PageLoader fullSize />}>
@@ -112,6 +115,7 @@ const App: React.FC = () => {
                     <Toaster position="bottom-right" />
                   </S.Layout>
                   <ConfirmationModal />
+                  <AppTour />
                 </ConfirmContextProvider>
               </UserInfoRolesAccessProvider>
             </Suspense>
